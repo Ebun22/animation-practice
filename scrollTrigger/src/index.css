@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.big-shoulders {
+  font-family: "Big Shoulders Display", sans-serif;
+
+}
+
+html,
+body {
+
+  /* font-family: "Space Mono", monospace; */
+  font-family: "Big Shoulders Display";
+}
+
+#root {
+  padding: 0%;
+}
+
+.bebas-neue{
+  font-family: "Bebas Neue", sans-serif;
+}
