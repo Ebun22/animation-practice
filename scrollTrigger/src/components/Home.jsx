@@ -160,7 +160,7 @@ const Home = () => {
                             cursor.current?.classList.remove(item);
                         })
                     })
-                    }
+                }
                 )
             }
             mouseAnimation()
@@ -171,11 +171,66 @@ const Home = () => {
     return (
         <div ref={mainContainer} className='w-full h-full cursor-none'>
             <div ref={cursor} className='pointer-events-none w-[40px] h-[40px] rounded-full bg-orange-400 fixed z-50'></div>
-            <section className="hero ">
-                <img src={img16} alt="first" />
+            <section className="hero bg-[url('./src/assets/img.jpg')] flex justify-center items-center">
+                {/* <img src={img16} alt="first" /> */}
+                <h1 className="uppercase text-[10vw] font-bold text-white leading-[-4px] bg-cover w-screen h-screen flex justify-center items-center">Accordion</h1>
             </section>
+
+            <section className="info  w-screen h-[150vh] text-[#fff] bg-black">
+                <div className="header-rows">
+                    <div className="header-row w-full h-[300px] px-[8em] flex items-center justify-start"><h1 className="text text-[16vw] font-bold text-white">Motion</h1></div>
+                    <div className="header-row w-full h-[250px] px-[8em] flex items-center justify-end"><h1 className="text text-[16vw] font-bold text-white ">Graphics</h1></div>
+                </div>
+            </section>
+
+            <section className="header-info relative w-full h-screen flex flex-col justify-between text-[#fff] bg-black">
+                <p className="text text-[6vw] font-thin p-[1em]">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic exercitationem at sapiente, aut esse
+                    orem, ipsum dolor sit
+                    {/*                 
+                amet consectetur adipisicing elit. Hic exercitationem at sapiente, aut esse 
+                repudiandae ad 
+                odit! Eius temporibus labore nihil et, beatae non officiis voluptate error modi saepe provident? */}
+                </p>
+            </section>
+
+            <div className="header-images w-full h-full flex gap-[1em]">
+                <div className="item flex flex-1 justify-center items-center"><img className="w-full h-full object-cover" src={img11} alt="" /></div>
+                <div className="item flex flex-1 justify-center items-center"><img className="w-full h-full object-cover" src={img13} alt="" /></div>
+                <div className="item flex flex-1 justify-center items-center"><img className="w-full h-full object-cover" src={img14} alt="" /></div>
+                <div className="item flex flex-1 justify-center items-center"><img className="w-full h-full object-cover" src={img6} alt="" /></div>
+            </div>
+
+            <section className="whitespace relative w-full h-[300vh] bg-black z-[-1]"></section>
+
+            <section className="pinned top-[100vh] absolute w-full h-[250vh] z-10">
+                <div
+                    className="revealer absolute  translate-x-[-50%] translate-y-[-10%] lg:translate-y-[0%] left-[30%] lg:left-[38%] lg:mt-[325px] mt-[265px] w-[120px] h-[120px]"
+                >
+                    <div
+                        style={{
+                            clipPath: "polygon(45% 0%, 55% 0%, 55% 100%, 45% 100%)"
+                        }}
+                        className="revealer-1 absolute top-0 left-0 w-full h-full bg-white "></div>
+                    <div
+                        style={{
+                            clipPath: "polygon(45% 0%, 55% 0%, 55% 100%, 45% 100%)"
+                        }}
+                        className="revealer-2 absolute top-0 left-0 w-full h-full bg-white rotate-[90deg]"></div>
+                </div>
+            </section>
+
+            <section className="website-content relative w-full h-[150vh] z-[10] bg-[#fff]">
+                <h1 className="text text-[8vw]  px-8 text-center font-thin ">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic exercitationem at sapiente, aut esse
+                    orem, ipsum dolor sit amet consectetur adipisicing elit. Hic exercitationem at sapiente, aut esse
+                    repudiandae ad
+                    odit! Eius temporibus labore nihil et, beatae non officiis voluptate error modi saepe provident?
+                </h1>
+            </section>
+
             <section className="about p-[5vw] bg-[#87795f]">
-                <p className='font-semibold text-[4vw] uppercase '>
+                <p className='font-semibold text-[4vw] uppercase'>
                     In a dystopian 3D-rendered cityscape, towering skyscrapers loom
                     ominously over a barren, decaying landscape. The once-thriving
                     metropolis is now bathed in cold, neon light, casting eerie reflections
