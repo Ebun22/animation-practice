@@ -23,21 +23,9 @@ const Home = () => {
 
     const marquee = useRef(null);
 
-    const mainContainer = useRef(null);
+    const mainContainer = useRef(null)
 
-    const cursor = useRef(null);
-
-    const about = mainContainer.current?.children[2]
-    const services = mainContainer.current?.children[4]
-
-    [about?.firstElementChild, services?.firstElementChild].forEach(item => (
-        item.addEventListener("mousemove", () => {
-
-            cursor.current.classList.add("mix-blend-darken")
-        })
-    ))
-
-
+    const cursor = useRef(null)
 
     //Cursor animation
     const cursorAnimation = () => {
@@ -145,6 +133,9 @@ const Home = () => {
 
     useEffect(() => {
 
+        const about = mainContainer.current?.children[2]
+        const services = mainContainer.current?.children[4]
+
         const marqueeList = Array.from(marquee.current?.children);
         marqueeAnimation(marqueeList)
 
@@ -154,11 +145,32 @@ const Home = () => {
         wordAnimation(arrayTexts)
 
         cursorAnimation()
+
+        if (about) {
+            const mouseAnimation = () => {
+                [about?.firstElementChild, services?.firstElementChild].forEach(item => {
+                    item.addEventListener("mousemove", () => {
+                        console.log("hovered on about");
+                        ["scale-[2]", "mix-blend-difference", "transition-all"].forEach((item) => {
+                            cursor.current?.classList.add(item);
+                        });
+                    })
+                    item.addEventListener("mouseleave", () => {
+                        ["scale-[2]", "mix-blend-difference", "transition-all"].forEach((item) => {
+                            cursor.current?.classList.remove(item);
+                        })
+                    })
+                    }
+                )
+            }
+            mouseAnimation()
+        }
+
     }, []);
 
     return (
         <div ref={mainContainer} className='w-full h-full cursor-none'>
-            <div ref={cursor} className='pointer-events-none w-[40px] h-[40px] rounded-full bg-[#fff] fixed z-50'></div>
+            <div ref={cursor} className='pointer-events-none w-[40px] h-[40px] rounded-full bg-orange-400 fixed z-50'></div>
             <section className="hero ">
                 <img src={img16} alt="first" />
             </section>
